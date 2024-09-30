@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Validation Example</title>
+    <script>
+        function validateSelection() {
+            var selectedOption = document.getElementById("options").value;
+            var result = document.getElementById("result");
+
+            if (selectedOption === "A") {
+                result.innerHTML = "Correct";
+            } else {
+                result.innerHTML = "Wrong";
+            }
+            return false;  // Prevent form submission
+        }
+    </script>
+</head>
+<body bgcolor="black" style="color: white;">
+    <center>
+        <h1>Heading📅</h1>
+        <img src="download.jpeg" alt="" style="width: 500px; height: 300px;">
+        <hr>
+    </center>
+    <p> </p>
+    <hr>
+    <center>
+        <form onsubmit="return validateSelection();">
+            <label for="options">What is Your name</label>
+            <select id="options" name="options">
+                <option value="A">Little Singam</option>
+                <option value="B">Ben 10</option>
+                <option value="C">Tom and Jerry</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="result"></p>  <!-- This will display "Correct" or "Wrong" -->
+    </center>
+</body>
+</html>

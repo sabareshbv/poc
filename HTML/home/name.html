@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stone Paper Scissors Game</title>
+    <style>
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        var playerScore = 0;
+        var computerScore = 0;
+
+        function playGame() {
+            var choices = ["Stone", "Paper", "Scissors"];
+            var countdown = 3;
+
+            var timerElement = document.getElementById("timer");
+            timerElement.innerHTML = "Starting in: " + countdown;
+
+            var timer = setInterval(function() {
+                countdown--;
+                timerElement.innerHTML = "Starting in: " + countdown;
+
+                if (countdown === 0) {
+                    clearInterval(timer);
+                    var randomChoice = choices[Math.floor(Math.random() * choices.length)];
+                    document.getElementById("result").innerHTML = "Computer chose: " + randomChoice;
+                    document.getElementById("computerChoice").value = randomChoice;
+                }
+            }, 1000);
+        }
+
+        function updateScore(win) {
+            if (win === "win") {
+                playerScore++;
+                document.getElementById("result").innerHTML += "<br>I Win!";
+            } else {
+                computerScore++;
+                document.getElementById("result").innerHTML += "<br>I Lose!";
+            }
+
+            document.getElementById("playerScore").innerHTML = playerScore;
+            document.getElementById("computerScore").innerHTML = computerScore;
+        }
+    </script>
+</head>
+<body>
+    <h2>Stone, Paper, Scissors</h2>
+
+    <button onclick="playGame()">Play</button>
+    <p id="timer"></p> <!-- Timer box with styling -->
+    <p id="result"></p> <!-- This will display countdown and result -->
+
+    <input type="hidden" id="computerChoice" value="">
+    
+    <button onclick="updateScore('win')">I Win</button>
+    <button onclick="updateScore('lose')">I Lose</button>
+
+    <h4>Scores</h4>
+    <p>Sabaresh: <span id="playerScore">0</span></p>
+    <p>Tamil: <span id="computerScore">0</span></p>
+</body>
+</html>

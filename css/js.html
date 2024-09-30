@@ -1,0 +1,72 @@
+<h1 id="h1">Heading</h1>
+<input id="input" value="inputvalue" type="text" placeholder="Input">
+<button id="button"  onclick="add(1,2)"  > submit</button>
+<br><br>
+
+
+<input id="Firstname"   placeholder="Firstname">
+<input id="Lastname"    placeholder="Secondname">
+<button onclick="addname()">AddName</button>
+<h3 id="result">__</h3>
+
+<input id="number1" type="number">
+<input id="number2" type="number">
+<button onclick="addnumber()">AddNumbers</button>
+<h3 id="numresult">___</h3>
+
+
+<input id="live" onkeyup="update()">
+<h1 id="livedisplay"></h1>
+
+<style>
+    .onclickingMagic{
+        padding: 30;
+        margin: 10;
+        text-align: center;
+        border-width: 10;
+        border-color: rgb(228, 171, 171);
+        border-style: solid;
+        background-color: rgb(168, 133, 201);
+        color: rgb(67, 229, 247);
+    }
+</style>
+
+<script>
+   
+    console.log( document.getElementById("h1").textContent)
+    console.log( document.getElementById("input").value)
+
+    function add(a, b){
+        console.log(a+b)
+
+    }
+
+    function addname(){
+        var firstname = document.getElementById("Firstname").value
+        var secondname = document.getElementById("Lastname").value
+        var finalname = firstname + secondname
+        document.getElementById("result").textContent = finalname
+
+    }
+
+    function addnumber(){
+        var firstnumberstring = document.getElementById("number1").value
+        var secondnumberstring = document.getElementById("number2").value
+        var firstnumber = Number(firstnumberstring)
+        var secondnumber = Number(secondnumberstring)
+        var result = firstnumber+secondnumber
+        document.getElementById("numresult").textContent= result
+        // alert("Output is " + result)
+
+        var res_var = document.getElementById("numresult")
+        res_var.setAttribute("class","onclickingMagic")
+    }
+
+    function update(){
+        var display = document.getElementById("livedisplay")
+        display.textContent = document.getElementById("live").value
+    }
+
+
+
+</script>

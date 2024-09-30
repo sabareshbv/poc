@@ -1,0 +1,46 @@
+<h1 id="h1">Name</h1>
+
+<button onclick="update(event)"> hai</button>
+
+<script>
+    function update(event){
+        console.log(event)
+        document.getElementById("h1").textContent = event.target.textContent
+    }
+</script>
+
+
+
+<br><br>
+
+
+
+<!-- 
+onlcick work on - h1
+event.targe  is the - actual element - when cllicked
+ -->
+
+
+
+<h1 id="h2" onclick="deleting(event)">Heading 2</h1>
+
+<script>
+    function deleting(event){
+        document.getElementById("h1").remove()
+        event.target.remove()
+    }
+</script>
+
+
+<br><br>
+
+<h1 id="h2" onclick="Change(event)">Heading 2</h1>
+
+<script>
+    function Change(event){
+        event.target.textContent = "Magic"
+    }
+</script>
+
+
+

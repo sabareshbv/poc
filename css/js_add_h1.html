@@ -1,0 +1,19 @@
+
+<button onclick="update()">Add</button>
+
+<div id="result">
+
+</div>
+
+<script>
+    var divv = document.getElementById("result")
+
+
+    function update(){
+        var newelement = document.createElement("h1")
+        newelement.textContent = "Hai "
+
+        divv.append(newelement)
+    }
+
+</script>
